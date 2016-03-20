@@ -1,6 +1,6 @@
 # phaxio-promise
 
-![build status](https://travis-ci.org/reconbot/node-phaxio-promise.svg)
+[![npm version](https://badge.fury.io/js/phaxio-promise.svg)](https://badge.fury.io/js/phaxio-promise) [![Build Status](https://travis-ci.org/reconbot/node-phaxio-promise.svg?branch=master)](https://travis-ci.org/reconbot/node-phaxio-promise)
 
 Send faxes with [Phaxio](http://www.phaxio.com). It's completely asynchronous and uses Promises.
 
