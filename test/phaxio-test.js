@@ -14,7 +14,6 @@ function makePhaxio(){
   return new Phaxio(key, secret);
 }
 
-
 // Setup network access, disable everything,
 // and start a mock to phaxio for use in each test
 // at the end of each test ensure mocks were hit and nothing is left over
@@ -65,9 +64,7 @@ describe('Phaxio', function() {
 
     it('rejects the error objects', function(){
       mockPhaxio.post('/v1/faxStatus').reply(200, mockResponses.faxStatusFailed);
-
       const message = mockResponses.faxStatusFailed.message;
-
       return makePhaxio().faxStatus(1).then(
         data => Promise.reject(data),
         err => assert.equal(err.message, message)
@@ -76,7 +73,6 @@ describe('Phaxio', function() {
 
     it('rejects http errors', function(){
       mockPhaxio.post('/v1/faxStatus').reply(500);
-
       return makePhaxio().faxStatus(1).then(
         data => Promise.reject(data),
         err => assert.match(err.message, /Internal Server Error/)
@@ -85,7 +81,6 @@ describe('Phaxio', function() {
   });
 
   describe('id based api calls', function(){
-
     const idBasedAPIs = [
       'faxCancel',
       'faxStatus',
@@ -131,7 +126,6 @@ describe('Phaxio', function() {
         filename: `${__dirname}/test.pdf`,
         name: 'tomas'
       });
-
       var busboy = new Busboy({ headers: form.getHeaders() });
       busboy.on('file', (fieldName, file, fileName) => {
         file.on('data', () => {});
@@ -158,6 +152,7 @@ describe('Phaxio', function() {
 
     // TODO
     // it('rejects without a local file', function(){
+    //   mockPhaxio.post('/v1/send').reply(200, mockResponses.send);
     //   return makePhaxio().send({
     //     to: '+12125551212',
     //     filename: 'nope.file'

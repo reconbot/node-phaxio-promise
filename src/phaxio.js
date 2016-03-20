@@ -33,15 +33,15 @@ function processForm(data){
   }
 
   files.forEach(file => {
-    let fileName, stream;
+    let filename, stream;
     if (typeof file === 'string') {
-      fileName = path.basename(file);
+      filename = path.basename(file);
       stream = fs.createReadStream(file);
     } else if (file instanceof ReadableStream) {
       if (file.path) {
-        fileName = path.basename(file.path);
+        filename = path.basename(file.path);
       } else {
-        fileName = 'Unknown Filename';
+        filename = 'Unknown-File-Name';
       }
       stream = file;
     } else {
@@ -51,7 +51,7 @@ function processForm(data){
     form.append(
       'filename',
       stream,
-      { filename: fileName }
+      { filename }
     );
   });
 
@@ -73,6 +73,7 @@ function Phaxio(apiKey, apiSecret) {
   this.apiSecret = apiSecret;
   this.host = 'https://api.phaxio.com';
   this.endpoint = '/v1';
+  this.retries = 0;
 }
 
 Phaxio.processForm = processForm;
@@ -83,7 +84,12 @@ Phaxio.prototype.post = function(resource, overRides){
   return form => {
     form.append('api_key', this.apiKey);
     form.append('api_secret', this.apiSecret);
-    const opt = {body: form, json: true, headers: form.getHeaders()};
+    const opt = {
+      body: form,
+      json: true,
+      headers: form.getHeaders(),
+      retries: this.retries
+    };
     Object.assign(opt, overRides);
     const url = `${this.host}${this.endpoint}/${resource}`;
     return got.post(url, opt);
