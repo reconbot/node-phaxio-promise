@@ -201,7 +201,7 @@ describe('Phaxio', function() {
       it('retrieves the files contents', function(){
         nock('https://api.phaxio.com').post('/v1/faxFile')
           .replyWithFile(200, `${__dirname}/test.txt`);
-        return makePhaxio().faxFile('23269672').then(body => {
+        return makePhaxio().faxFile({id: '23269672'}).then(body => {
           return assert.equal(body, 'hi this is a file\n');
         });
       });

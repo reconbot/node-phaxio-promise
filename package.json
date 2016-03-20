@@ -12,7 +12,7 @@
     "promises"
   ],
   "scripts": {
-    "unit": "mocha --reporter nyan --require test/setup.js --recursive 'test/*-test.js'",
+    "unit": "mocha --require test/setup.js --recursive 'test/*-test.js'",
     "lint": "eslint ./",
     "test": "npm run lint && npm run unit"
   },

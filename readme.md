@@ -1,5 +1,7 @@
 # phaxio-promise
 
+![build status](https://travis-ci.org/reconbot/node-phaxio-promise.svg)
+
 Send faxes with [Phaxio](http://www.phaxio.com). It's completely asynchronous and uses Promises.
 
 This was based off of the sweet [node-phaxio](https://github.com/chadsmith/node-phaxio) by Chad Smith. It's got a callback interface and works with node v0.8.x.
@@ -225,8 +227,8 @@ phaxio.attachPhaxCodeToPdf({
   y:25,
   metadata: 'Fax with kittens',
   page_number: 5
-}).then(function(fileData) {
-    fs.writeFile('./kittens-with-PhaxCode.pdf'), fileData);
+}).then((fileData) => {
+  fs.writeFile('./kittens-with-PhaxCode.pdf'), fileData);
 });
 ```
 ### `createPhaxCode(options)`
@@ -250,7 +252,7 @@ Returns the hosted document `name` with a basic PhaxCode or custom PhaxCode if `
 phaxio.getHostedDocument({
   name:'order-form',
   metadata: 'Referred by Chad Smith'
-}).then(function(fileData) {
+}).then((fileData) => {
   fs.writeFile('order-form.pdf', fileData);
 });
 ```
