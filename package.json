@@ -1,34 +1,44 @@
 {
   "author": {
-    "name": "Chad Smith",
-    "email": "chad@nospam.me",
-    "url": "http://twitter.com/chadsmith"
+    "name": "Francis Gulotta",
+    "email": "wizard@roborooter.com",
+    "url": "https://roborooter.com"
   },
-  "contributors": [
-    {
-      "name": "Francis Gulotta",
-      "email": "wizard@roborooter.com",
-      "url": "http://rbrtr.com"
-    }
-  ],
-  "name": "phaxio",
-  "description": "Send faxes with the Phaxio API",
+  "name": "phaxio-promise",
+  "description": "Send faxes with the Phaxio API and promises",
   "keywords": [
     "fax",
-    "phaxio"
+    "phaxio",
+    "promises"
   ],
+  "scripts": {
+    "unit": "mocha --reporter nyan --require test/setup.js --recursive 'test/*-test.js'",
+    "lint": "eslint ./",
+    "test": "npm run lint && npm run unit"
+  },
   "version": "0.1.0",
-  "homepage": "https://github.com/chadsmith/node-phaxio",
+  "homepage": "https://github.com/reconbot/node-phaxio",
   "repository": {
     "type": "git",
-    "url": "git://github.com/chadsmith/node-phaxio.git"
+    "url": "git://github.com/reconbot/node-phaxio.git"
   },
   "engines": {
-    "node": "0.8.x"
+    "node": "^4.4.x",
+    "npm": "^3.8.x"
   },
-  "main": "./phaxio.js",
+  "main": "./src/phaxio.js",
   "dependencies": {
-    "request": "2.67.x",
-    "mime": "1.2.x"
+    "chai": "^3.5.0",
+    "form-data": "^1.0.0-rc4",
+    "got": "^6.2.0"
+  },
+  "devDependencies": {
+    "busboy": "^0.2.12",
+    "eslint": "^2.4.0",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "mocha": "^2.4.5",
+    "nock": "^7.2.2"
   }
 }
