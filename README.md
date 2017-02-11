@@ -1,6 +1,6 @@
 # phaxio-promise
 
-[![npm version](https://badge.fury.io/js/phaxio-promise.svg)](https://badge.fury.io/js/phaxio-promise) [![Build Status](https://travis-ci.org/reconbot/node-phaxio-promise.svg?branch=master)](https://travis-ci.org/reconbot/node-phaxio-promise)
+[![npm version](https://badge.fury.io/js/phaxio-promise.svg)](https://badge.fury.io/js/phaxio-promise) [![Build Status](https://travis-ci.org/reconbot/node-phaxio-promise.svg?branch=master)](https://travis-ci.org/reconbot/node-phaxio-promise) [![Greenkeeper badge](https://badges.greenkeeper.io/reconbot/node-phaxio-promise.svg)](https://greenkeeper.io/)
 
 Send faxes with [Phaxio](http://www.phaxio.com). It's completely asynchronous and uses Promises.
 
