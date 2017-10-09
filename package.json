@@ -23,7 +23,7 @@
     "url": "git://github.com/reconbot/node-phaxio.git"
   },
   "engines": {
-    "node": "^4.4.x",
+    "node": ">=4.4.x",
     "npm": "^3.8.x"
   },
   "main": "./src/phaxio.js",
