@@ -43,5 +43,15 @@
     "mocha": "^3.2.0",
     "nock": "^9.0.5",
     "semantic-release": "^8.0.3"
+  },
+  "release": {
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {"type": "docs", "scope": "README", "release": "patch"},
+        {"type": "chore", "release": "patch"},
+        {"type": "refactor", "release": "patch"}
+      ]
+    }
   }
 }
