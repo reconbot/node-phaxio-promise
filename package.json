@@ -6,6 +6,7 @@
   },
   "name": "phaxio-promise",
   "description": "Send faxes with the Phaxio API and promises",
+  "license": "MIT",
   "keywords": [
     "fax",
     "phaxio",
@@ -24,15 +25,15 @@
   },
   "engines": {
     "node": ">=4.4.x",
-    "npm": "^3.8.x"
+    "npm": ">=3.8.x"
   },
   "main": "./src/phaxio.js",
   "dependencies": {
-    "chai": "^3.5.0",
     "form-data": "^1.0.0-rc4",
     "got": "^6.2.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "busboy": "^0.2.12",
     "eslint": "^2.4.0",
     "eslint-config-standard": "^5.1.0",
