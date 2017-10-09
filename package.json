@@ -18,10 +18,10 @@
     "test": "npm run lint && npm run unit"
   },
   "version": "0.2.1",
-  "homepage": "https://github.com/reconbot/node-phaxio",
+  "homepage": "https://github.com/reconbot/node-phaxio-promise",
   "repository": {
     "type": "git",
-    "url": "git://github.com/reconbot/node-phaxio.git"
+    "url": "git://github.com/reconbot/node-phaxio-promise.git"
   },
   "engines": {
     "node": ">=4.4.x",
