@@ -31,7 +31,7 @@
   "main": "./src/phaxio.js",
   "dependencies": {
     "form-data": "^2.1.2",
-    "got": "^6.2.0"
+    "got": "^9.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
