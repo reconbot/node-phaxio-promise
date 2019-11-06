@@ -30,7 +30,7 @@
   },
   "main": "./src/phaxio.js",
   "dependencies": {
-    "form-data": "^2.1.2",
+    "form-data": "^3.0.0",
     "got": "^6.2.0"
   },
   "devDependencies": {
